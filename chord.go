@@ -36,12 +36,6 @@ type Transport interface {
 
 	// Register for an RPC callbacks
 	Register(*Vnode, VnodeRPC)
-
-	// store data under key
-	Put(*Vnode, []byte, []byte) error
-
-	// retrieve data with key
-	Get(*Vnode, []byte) ([]byte, error)
 }
 
 // These are the methods to invoke on the registered vnodes

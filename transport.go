@@ -162,14 +162,6 @@ func (lt *LocalTransport) Deregister(v *Vnode) {
 	lt.lock.Unlock()
 }
 
-func (lt *LocalTransport) Put(self *Vnode, key []byte, data []byte) error {
-	return nil
-}
-
-func (lt *LocalTransport) Get(self *Vnode, key []byte) ([]byte, error) {
-	return nil, nil
-}
-
 // BlackholeTransport is used to provide an implemenation of the Transport that
 // does not actually do anything. Any operation will result in an error.
 type BlackholeTransport struct {
@@ -204,12 +196,4 @@ func (*BlackholeTransport) SkipSuccessor(target, self *Vnode) error {
 }
 
 func (*BlackholeTransport) Register(v *Vnode, o VnodeRPC) {
-}
-
-func (lt *BlackholeTransport) Put(self *Vnode, key []byte, data []byte) error {
-	return nil
-}
-
-func (lt *BlackholeTransport) Get(self *Vnode, key []byte) ([]byte, error) {
-	return nil, nil
 }
