@@ -610,11 +610,11 @@ func (t *TCPTransport) reapOnce() {
 	}
 }
 
-func (t *TCPTransport) Put(self *Vnode, key []byte, data []byte) error {
+func (t *TCPTransport) PutValue(self *Vnode, key string, data []byte) error {
 	return nil
 }
 
-func (t *TCPTransport) Get(self *Vnode, key []byte) ([]byte, error) {
+func (t *TCPTransport) GetValue(self *Vnode, key string) ([]byte, error) {
 	return nil, nil
 }
 

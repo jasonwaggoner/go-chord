@@ -87,11 +87,11 @@ func (ml *MultiLocalTrans) Deregister(host string) {
 	delete(ml.hosts, host)
 }
 
-func (ml *MultiLocalTrans) Put(self *Vnode, key []byte, data []byte) error {
+func (ml *MultiLocalTrans) PutValue(self *Vnode, key string, data []byte) error {
 	return nil
 }
 
-func (ml *MultiLocalTrans) Get(self *Vnode, key []byte) ([]byte, error) {
+func (ml *MultiLocalTrans) GetValue(self *Vnode, key string) ([]byte, error) {
 	return nil, nil
 }
 

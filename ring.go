@@ -18,6 +18,7 @@ func (r *Ring) init(conf *Config, trans Transport) {
 		vn := &localVnode{}
 		r.vnodes[i] = vn
 		vn.ring = r
+		vn.Map = make(map[string][]byte)
 		vn.init(i)
 	}
 
