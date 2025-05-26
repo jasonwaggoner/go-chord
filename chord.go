@@ -227,3 +227,7 @@ func (r *Ring) Lookup(n int, key []byte) ([]*Vnode, error) {
 	}
 	return successors, nil
 }
+
+func (r *Ring) Store(vn *Vnode, key string, data []byte) error {
+	return r.transport.PutValue(vn, key, data)
+}
