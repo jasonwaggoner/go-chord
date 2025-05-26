@@ -610,6 +610,14 @@ func (t *TCPTransport) reapOnce() {
 	}
 }
 
+func (t *TCPTransport) Put(self *Vnode, key []byte, data []byte) error {
+	return nil
+}
+
+func (t *TCPTransport) Get(self *Vnode, key []byte) ([]byte, error) {
+	return nil, nil
+}
+
 // Listens for inbound connections
 func (t *TCPTransport) listen() {
 	for {

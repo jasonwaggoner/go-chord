@@ -87,6 +87,14 @@ func (ml *MultiLocalTrans) Deregister(host string) {
 	delete(ml.hosts, host)
 }
 
+func (ml *MultiLocalTrans) Put(self *Vnode, key []byte, data []byte) error {
+	return nil
+}
+
+func (ml *MultiLocalTrans) Get(self *Vnode, key []byte) ([]byte, error) {
+	return nil, nil
+}
+
 func TestDefaultConfig(t *testing.T) {
 	conf := DefaultConfig("test")
 	if conf.Hostname != "test" {

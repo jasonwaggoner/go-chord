@@ -36,6 +36,12 @@ type Transport interface {
 
 	// Register for an RPC callbacks
 	Register(*Vnode, VnodeRPC)
+
+	// store data under key
+	Put(*Vnode, []byte, []byte) error
+
+	// retrieve data with key
+	Get(*Vnode, []byte) ([]byte, error)
 }
 
 // These are the methods to invoke on the registered vnodes
@@ -70,8 +76,9 @@ type Config struct {
 
 // Represents an Vnode, local or remote
 type Vnode struct {
-	Id   []byte // Virtual ID
-	Host string // Host identifier
+	Id        []byte // Virtual ID
+	Host      string // Host identifier
+	EndPoints []string
 }
 
 // Represents a local Vnode
